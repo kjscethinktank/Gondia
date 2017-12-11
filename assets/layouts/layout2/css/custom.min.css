@@ -1,0 +1,18 @@
+
+.page-header.navbar .page-top{
+
+	background: #ffc107;
+}
+.page-header.navbar .page-logo {
+    background: #ffc107;
+}
+
+@media (max-width: 767px){
+	.page-header.navbar {
+    		background:  #ffc107;
+	}
+}
+
+.page-header.navbar .menu-toggler {
+	background-image: url(../img/sidebar_toggler_icon_darkblue.png);
+}
