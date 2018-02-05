@@ -15,123 +15,62 @@
                             <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
                             <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                                 <li class="nav-item start ">
-                                    <a href="Currentorders.php" class="nav-link nav-toggle">
+                                    <a href="Admitpatient.php" class="nav-link nav-toggle">
                                         <i class="fa fa-cutlery" style="color:#ffc107"></i>
-                                        <span class="title">Current Orders</span>
+                                        <span class="title">Admit Patient</span>
+                                        <span class="arrow"></span>
+                                    </a>
+                                </li>
+                                 <li class="nav-item  ">
+                                    <a  class="nav-link nav-toggle">
+                                        <i class="fa fa-clipboard" style="color:#ffc107"></i>
+                                        <span class="title">Patients</span>
                                         <span class="arrow"></span>
                                     </a>
                                     <ul class="sub-menu">
-                                        <li class="nav-item start ">
-                                            <a href="Currentorders.php#n" class="nav-link " onclick="loadtab('n')">
-                                                <i class="fa fa-tasks"></i>
-                                                <span class="title">New Order</span>
+                                        <li class="nav-item  ">
+                                            <a href="daignosis.php" class="nav-link">
+                                                <i class="fa fa-folder-open"></i>
+                                                <span class="title">Diagnosis</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item start ">
-                                            <a href="Currentorders.php#p" class="nav-link " onclick="loadtab('p')">
-                                                <i class="fa fa-hourglass-start"></i>
-                                                <span class="title">Processing</span>
-                                                <span class="badge badge-danger">3</span>
+                                        <li class="nav-item  ">
+                                            <a href="DoctorFindings.php" class="nav-link ">
+                                                <i class="fa fa-table"></i>
+                                                <span class="title">Doctor Findings</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item start ">
-                                            <a href="Currentorders.php#r" class="nav-link " onclick="loadtab('r')">
-                                                <i class="fa fa-tag"></i>
-                                                <span class="title">Recent</span>
+                                        <li class="nav-item  ">
+                                            <a href="DailyReadings.php" class="nav-link">
+                                                <i class="fa fa-folder-open"></i>
+                                                <span class="title">Daily Readings</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
+                               
                                 <li class="nav-item  ">
-                                    <a href="pastorders.php" class="nav-link nav-toggle">
-                                        <i class="fa fa-database" style="color:#ffc107"></i>
-                                        <span class="title">Past Orders</span>
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                                <li class="nav-item  ">
-                                    <a href="Addorders.php" class="nav-link nav-toggle">
-                                        <i class="fa fa-pencil-square-o" style="color:#ffc107"></i>
-                                        <span class="title">Add orders</span>
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                                <li class="nav-item  ">
-                                    <a href="Addinventory.php" class="nav-link nav-toggle">
+                                    <a href="inventory.php" class="nav-link nav-toggle">
                                         <i class="fa fa-clipboard" style="color:#ffc107"></i>
                                         <span class="title">Inventory</span>
                                         <span class="arrow"></span>
                                     </a>
-                                    <ul class="sub-menu">
-                                        <li class="nav-item  ">
-                                            <a href="Addinventory.php" class="nav-link">
-                                                <i class="fa fa-folder-open"></i>
-                                                <span class="title">Add Inventory</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item  ">
-                                            <a href="inventory.php" class="nav-link ">
-                                                <i class="fa fa-table"></i>
-                                                <span class="title">Past Inventory</span>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                   
                                 </li>
                                 <li class="nav-item  ">
-                                    <a href="menu.php" class="nav-link nav-toggle">
+                                    <a href="Billing.php" class="nav-link nav-toggle">
                                         <i class="fa fa-file" style="color:#ffc107"></i>
-                                        <span class="title">Menu</span>
+                                        <span class="title">Bills</span>
                                         <span class="arrow"></span>
                                     </a>
 
                                 </li>
                                 <li class="nav-item  ">
-                                    <a href="Addmenu.php" class="nav-link nav-toggle">
+                                    <a href="signup.php" class="nav-link nav-toggle">
                                         <i class="fa fa-exchange" style="color:#ffc107"></i>
-                                        <span class="title">Change Menu</span>
+                                        <span class="title">Register</span>
                                         <span class="arrow"></span>
                                     </a>
-                                    <ul class="sub-menu">
-                                        <li class="nav-item  ">
-                                            <a href="Addmenu.php" class="nav-link ">
-                                                <i class="fa fa-plus"></i>
-                                                <span class="title">Add</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item  ">
-                                            <a href="Editmenu.php" class="nav-link ">
-                                                <i class="fa fa-pencil"></i>
-                                                <span class="title">Edit</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item  ">
-                                            <a href="Deletemenu.php" class="nav-link ">
-                                                <i class="fa fa-trash-o"></i>
-                                                <span class="title">Delete</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item  ">
-                                    <a href="area.php" class="nav-link nav-toggle">
-                                        <i class="fa fa-globe" style="color:#ffc107"></i>
-                                        <span class="title">Areas</span>
-                                        <span class="arrow"></span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li class="nav-item start ">
-                                            <a href="area.php#a" class="nav-link " onclick="loadtab('a')">
-                                                <i class="fa fa-eye"></i>
-                                                <span class="title">View areas</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item start ">
-                                            <a href="area.php#aa" class="nav-link " onclick="loadtab('aa')">
-                                                <i class="fa fa-arrows"></i>
-                                                <span class="title">Add area</span>
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li class="nav-item  ">
                                     <a href="Changepassword.php" class="nav-link nav-toggle">
