@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<?php $page_title = "Daily Readings"; ?>
+<?php $page_title = "Patient Charges"; ?>
 <head>
 <meta charset="utf-8" />
 <?php include("includes/header.php"); ?>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">    
 </head>
 
     <?php include("includes/bodyheader.php"); ?>
@@ -12,7 +13,9 @@
     <?php include("includes/navigation.php"); ?>
     <?php include("config.php");?>
     <?php $query= "SELECT P_id from patient";
-    $result = mysqli_query ($db,$query);  ?>
+    $result = mysqli_query ($db,$query);
+    $queryy= "SELECT inven_name from inventory";
+    $resultt = mysqli_query ($db,$queryy);?>
 
 
 <!-- BEGIN CONTENT -->
@@ -25,7 +28,7 @@
             <div class="portlet light portlet-fit portlet-form ">
                 <div class="portlet-title">
                 <h2 style="text-align:center;"><span class=" font-yellow-lemon sbold">
-                <div style="color:#ffc107">&nbsp; Readings</div></span></h2>
+                <div style="color:#ffc107">&nbsp; Patient Inventory</div></span></h2>
                 <div class="form-horizontal">
                 <div class="form-group form-md-line-input" >
                                 <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient id:</b>
@@ -53,16 +56,9 @@
                                 <div class="col-xs-8 col-sm-2 col-md-3"></div>
                             </div>
                             <script>            
-                        function disp() {
+                        function disp() {    
                         var select = document.getElementById("pid");
-                        var opt = select.value;
-                        document.getElementById("dat").value="";
-                        document.getElementById("pul").value="";
-                        document.getElementById("bp").value="";
-                        document.getElementById("iv").value="";
-                        document.getElementById("time").value="";
-                        document.getElementById("respi").value="";
-                        document.getElementById("temp").value="";    
+                        var opt = select.value;      
                         $.ajax({
                         type: 'POST',
                         url: 'show.php',
@@ -80,7 +76,7 @@
                     });
                          $.ajax({
                         type: 'POST',
-                        url: 'showreadings.php',
+                        url: 'showpin.php',
                         data: {pidd:opt},
                         cache: false,
                         success: function(d){
@@ -90,7 +86,7 @@
                         var row="";
                         for(count=0;count<res.length;count++){
                             var respli= res[count].split(",");
-                            row+='<tr><td>' + respli[0] + '</td><td>' + respli[1] +'</td><td>' + respli[2] +'</td><td>' + respli[3] +'</td><td>'+ respli[4] +'</td><td>'+ respli[5] +'</td></tr>';
+                            row+='<tr><td>' + respli[0] + '</td><td>' + respli[1] +'</td><td>' + respli[2] +'</td></tr>';
 
                         }
                         $(row).appendTo("#sample_3 tbody");
@@ -159,112 +155,47 @@
                             <div class="alert alert-success display-hide" id="suc">
                                 <button class="close" data-close="alert"></button> Information is Updated Successfully! </div>
                             <div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Date</b>
+                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Charge for</b>
                                     <span class="required">*</span>
                                 </label>
                                 <div class="col-xs-12 col-sm-6 col-md-5">
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
+                                            <i class="fa fa-inr"></i>
                                         </span>
-                                    <input type="date" class="form-control" placeholder="" id="dat" required>
+                                    <input list="inventory" class="form-control" placeholder="" id="invent" required>
                                     <div class="form-control-focus"> </div>
-                                    <span class="help-block">Enter date</span>
+                                    <datalist id="inventory">
+                                        <?php
+                                          if($resultt){
+                                           while($row=mysqli_fetch_assoc($resultt))
+                                            {    
+                                             echo "<option>".$row['inven_name']."</option>";
+                                           }
+                                          }
+                                        ?>
+                                        </datalist>    
+                                    <span class="help-block">Select Charge</span>
                                     </div>
                                 </div>
                                 <div class="col-xs-8 col-sm-2 col-md-3"></div>
                             </div>
                             <div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Time</b>
+                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Quantity</b>
                                     <span class="required">*</span>
                                 </label>
                                 <div class="col-xs-12 col-sm-6 col-md-5">
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <i class="fa fa-clock-o"></i>
+                                            <i class="fa fa-sort-numeric-asc"></i>
                                         </span>
-                                    <input type="time" class="form-control" placeholder="" id="time" required>
+                                    <input type="number" class="form-control" placeholder="" id="qaun" required>
                                     <div class="form-control-focus"> </div>
-                                    <span class="help-block">Enter time</span>    
+                                    <span class="help-block">Enter quantity</span>    
                                     </div>
                                 </div>
                                 <div class="col-xs-8 col-sm-2 col-md-3"></div>
                             </div>
-                            <div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Pusle</b>
-                                    <span class="required">*</span>
-                                </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-heartbeat"></i>
-                                        </span>
-                                    <input type="text" class="form-control" placeholder="" id="pul" required>
-                                    <div class="form-control-focus"> </div>
-                                    <span class="help-block">Enter pulse rate</span>    
-                                    </div>
-                                </div>
-                                </div>
-                             <div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Bp</b>
-                                    <span class="required">*</span>
-                                </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-gratipay"></i>
-                                        </span>
-                                    <input type="text" class="form-control" placeholder="" id="bp" required>
-                                    <div class="form-control-focus"> </div>
-                                    <span class="help-block">Enter Bp</span>    
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Temperature</b>
-                                    <span class="required">*</span>
-                                </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-thermometer-2"></i>
-                                        </span>
-                                    <input type="text" class="form-control" placeholder="" id="temp" required>
-                                    <div class="form-control-focus"> </div>
-                                    <span class="help-block">Enter Temp</span>    
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Respi</b>
-                                    <span class="required">*</span>
-                                </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-medkit"></i>
-                                        </span>
-                                    <input type="textarea" class="form-control" placeholder="" id="respi" required>
-                                    <div class="form-control-focus"> </div>
-                                    <span class="help-block">Enter respi</span>    
-                                    </div>
-                                </div>
-                                </div>
-                                 <div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>IV Fluids</b>
-                                    <span class="required">*</span>
-                                </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-medkit"></i>
-                                        </span>
-                                    <input type="textarea" class="form-control" placeholder="" id="iv" required>
-                                    <div class="form-control-focus"> </div>
-                                    <span class="help-block">Enter IV Fluids</span>    
-                                    </div>
-                                </div>
-                                </div>
                         </div>
                         <div class="form-actions">
                             <div class="row">
@@ -281,11 +212,8 @@
                                         <thead>
                                             <tr class="">
                                                 <th class="all"> Date-Time</th>
-                                                <th class="all"> Pulse</th>
-                                                <th class="all"> Bp</th>
-                                                <th class="all"> Temperature</th>
-                                                <th class="all"> Respi</th>
-                                                <th class="all"> IV Fluids</th>
+                                                <th class="all"> Inventory ID</th>
+                                                <th class="all"> Quantity</th>
                                             </tr>
                                         </thead>
                                         <tbody id="sample_4"></tbody>
@@ -298,19 +226,15 @@
      <script>
         function up(){
             var pi=document.getElementById("pid").value;
-            var dt=document.getElementById("dat").value;
-            var ti=document.getElementById("time").value;
-            var pu=document.getElementById("pul").value;
-            var b=document.getElementById("bp").value;
-            var te=document.getElementById("temp").value;
-            var respi=document.getElementById("respi").value;
-            var iv=document.getElementById("iv").value;
-            if(dt!="" && ti!="" && b!="" && te!="")
+            var select1 = document.getElementById("invent");
+            var opt1 = select1.value;
+            var q=document.getElementById("qaun").value;
+            if(q!="" && opt1!="")
                 {
                   $.ajax({
                         type: 'POST',
-                        url: 'updatereadings.php',
-                        data: {pidd:pi,datee:dt,tim:ti,pul:pu,bp:b,tem:te,resp:respi,ivf:iv},
+                        url: 'updatepin.php',
+                        data: {pidd:pi,nam:opt1,qaun:q},
                         cache: false,
                         success: function(d){ 
                             var suc=document.getElementById("suc");
