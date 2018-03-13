@@ -11,6 +11,12 @@
                     <span></span>
                 </div>
             </div>
+            <?php
+                include('config.php');
+                $query= "SELECT inven_name,inven_id from inventory where available<=5";
+                $result = mysqli_query ($db,$query);
+                $rowcount=mysqli_num_rows($result);
+            ?>
             <!-- END LOGO -->
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
             <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
@@ -29,44 +35,28 @@
                         <li class="dropdown dropdown-extended dropdown-dark dropdown-notification" id="header_notification_bar">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                 <i class="icon-bell" style="color: black;"></i>
-                                <span class="badge badge-primary"> 3 </span>
+                                <?php 
+                                if($rowcount!=0){
+                                echo '<span class="badge badge-primary">'.$rowcount.' </span>';
+                                }
+                                else{}
+                                ?>
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="external">
-                                    <h3><span class="bold">3 pending</span> notifications</h3>
+                                    <h3><span class="bold"><?php echo $rowcount; ?> pending</span> notifications</h3>
                                 </li>
                                 <li>
                                     <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283" >
-                                        <li>
-                                            <a href="javascript:;">
-                                                <span class="time">just now</span>
-                                                <span class="details">
-                                                    <span class="label label-sm label-icon label-success">
-                                                        <i class="fa fa-plus"></i>
-                                                    </span> New order.
-                                                </span>
-                                            </a>
-                                        </li>
-										<li>
-                                            <a href="javascript:;">
-                                                <span class="time">just now</span>
-                                                <span class="details">
-                                                    <span class="label label-sm label-icon label-success">
-                                                        <i class="fa fa-plus"></i>
-                                                    </span> New order.
-                                                </span>
-                                            </a>
-                                        </li>
-										<li>
-                                            <a href="javascript:;">
-                                                <span class="time">just now</span>
-                                                <span class="details">
-                                                    <span class="label label-sm label-icon label-success">
-                                                        <i class="fa fa-plus"></i>
-                                                    </span> New order.
-                                                </span>
-                                            </a>
-                                        </li>
+                                        <?php
+                                        if($rowcount!=0)
+                                        {
+                                        while($row=mysqli_fetch_assoc($result))
+                                                    {
+                                                        echo '<li><a href="edit_inventory.php?id='.$row["inven_id"].'&n='.$row["inven_name"].'"><span class="time">just now</span><span class="details"><span class="label label-sm label-icon label-success"><i class="fa fa-plus"></i></span> '.$row["inven_name"].' </span></a></li>';
+                                                    }
+                                        }
+                                        ?>
                                     </ul>
                                 </li>
                             </ul>
