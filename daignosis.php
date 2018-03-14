@@ -24,14 +24,14 @@
 <div class="content">
             <div class="portlet light portlet-fit portlet-form ">
                 <div class="portlet-title">
-                <h2 style="text-align:center;"><span class=" font-yellow-lemon sbold">
-				<div style="color:#ffc107">&nbsp; Diagnosis</div></span></h2>
+                <h4 style="text-align:center;"><span class=" font-yellow-lemon sbold">
+				<div style="color:#ffc107">&nbsp; Diagnosis</div></span></h4>
                 <div class="form-horizontal">
-                <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient id:</b>
+               <div class="form-group form-md-line-input" >
+                                <label class="col-xs-1 col-sm-1 col-md-1 control-label" style="color:black; font-size: 12px"><b>Patient id:</b>
                                     <span class="required"></span>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-4 col-sm-4 col-md-2">
                                     <div class="input-group">
                                         <span class="input-group-addon">
                                             <i class="fa fa-user"></i>
@@ -48,11 +48,10 @@
                                           }
                                         ?>
                                         </datalist>
-									</div>
+                                    </div>
                                 </div>
-								<div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div>
-                            <script>            
+                                
+                            </div>             <script>            
                         function disp() {
                         var select = document.getElementById("pid");
                         var opt = select.value;
@@ -77,56 +76,48 @@
                     });
                     }
                     </script><br><br>
-                    <div id="info" class="display-hide">
+                    <div id="info">
                     <div class="row">
                             <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient Name:</b>
+                                <label class="col-xs-2 col-sm-2 col-md-1 control-label" style="color:black;"><b>Name:</b>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-4 col-sm-4 col-md-2">
                                     <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pns" style="border:none;">
                                     </div>
                                 </div>
-								<div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>DOA:</b>
+                               
+                            
+                            
+                                <label class="col-xs-2 col-sm-2 col-md-1 control-label" style="color:black;"><b>DOA:</b>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-4 col-sm-4 col-md-2">
                                     <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pd" style="border:none;">
                                     </div>
                                 </div>
-								<div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient Age:</b>
+                              
+                                <label class="col-xs-2 col-sm-2 col-md-1 control-label" style="color:black;"><b>Age:</b>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-4 col-sm-4 col-md-2">
                                     <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pa" style="border:none;">
                                     </div>
                                 </div>
-								<div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div></div>
-                        
-                            <div class="row">
-                            <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient Gender:</b>
+                                
+                            
+                            
+                                <label class="col-xs-2 col-sm-2 col-md-1 control-label" style="color:black;"><b>Gender:</b>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-4 col-sm-4 col-md-2">
                                 <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pg" style="border:none;">
                                 </div>
                                 </div>
-								<div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div>
-                        </div>
-                    </div>
+                                
+                            
+                        </div></div>
+                </div>
                 </div>
                 <div class="portlet-body">
                     <!-- BEGIN FORM-->
@@ -138,15 +129,12 @@
                             <div class="alert alert-success display-hide" id="suc">
                                 <button class="close" data-close="alert"></button> Information is Updated Successfully! </div>
                             <div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Symptoms</b>
-                                    <span class="required">*</span>
-                                </label>
                                 <div class="col-xs-12 col-sm-6 col-md-5">
                                     <div class="input-group">
                                         <span class="input-group-addon">
                                             <i class="fa fa-stethoscope"></i>
                                         </span>
-                                    <input type="textarea" class="form-control" placeholder="" id="symptoms" required>
+                                    <input type="textarea" class="form-control" placeholder="Symptoms" id="symptoms" required>
                                     <div class="form-control-focus"> </div>
                                     <span class="help-block">Symptoms Observed</span>
 									</div>
@@ -154,15 +142,12 @@
 								<div class="col-xs-8 col-sm-2 col-md-3"></div>
                             </div>
 							<div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Earlier Treatment</b>
-                                    <span class="required">*</span>
-                                </label>
                                 <div class="col-xs-12 col-sm-6 col-md-5">
                                     <div class="input-group">
                                         <span class="input-group-addon">
                                             <i class="fa fa-ambulance"></i>
                                         </span>
-                                    <input type="text" class="form-control" placeholder="" id="earlier_treat" required>
+                                    <input type="text" class="form-control" placeholder="Earlier Treatments" id="earlier_treat" required>
                                     <div class="form-control-focus"> </div>
                                     <span class="help-block">Earlier Treatments if any</span>    
 									</div>
@@ -170,15 +155,12 @@
 								<div class="col-xs-8 col-sm-2 col-md-3"></div>
                             </div>
                             <div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Conclusion </b>
-                                    <span class="required">*</span>
-                                </label>
                                 <div class="col-xs-12 col-sm-6 col-md-5">
                                     <div class="input-group">
                                         <span class="input-group-addon">
                                             <i class="fa fa-medkit"></i>
                                         </span>
-                                    <input type="textarea" class="form-control" placeholder="" id="conc" required>
+                                    <input type="textarea" class="form-control" placeholder="Conclusions made" id="conc" required>
                                     <div class="form-control-focus"> </div>
                                     <span class="help-block">Conclusions Made</span>    
 									</div>
@@ -187,11 +169,11 @@
                         </div>
                         <div class="form-actions">
                             <div class="row">
-							    <div class="col-xs-3 col-sm-3 col-md-3"></div>
+							    <div class="col-xs-5 col-sm-5 col-md-5"></div>
                                 <div class="col-xs-1 col-sm-1 col-md-1">
                                     <input type="submit" class="btn btn-warning" onclick="up();" value="Update Info">
                                 </div>
-								<div class="col-xs-6 col-sm-6 col-md-6"></div>
+								<div class="col-xs-5 col-sm-5 col-md-5"></div>
                             </div>
                         </div>
                     </form>
