@@ -22,16 +22,16 @@
 <div class="page-content">
      
 <div class="content">
-            <div class="portlet light portlet-fit portlet-form ">
+            <div class="portlet light portlet-form">
                 <div class="portlet-title">
-                <h2 style="text-align:center;"><span class=" font-yellow-lemon sbold">
-                <div style="color:#ffc107">&nbsp; Findings</div></span></h2>
+                <h4 style="text-align:center;"><span class=" font-yellow-lemon sbold">
+                <div style="color:#ffc107">&nbsp; Findings</div></span></h4>
                 <div class="form-horizontal">
                 <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient id:</b>
+                                <label class="col-xs-1 col-sm-1 col-md-1 control-label" style="color:black; font-size: 12px"><b>Patient id:</b>
                                     <span class="required"></span>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-4 col-sm-4 col-md-2">
                                     <div class="input-group">
                                         <span class="input-group-addon">
                                             <i class="fa fa-user"></i>
@@ -50,7 +50,7 @@
                                         </datalist>
                                     </div>
                                 </div>
-                                <div class="col-xs-8 col-sm-2 col-md-3"></div>
+                                
                             </div>
                             <script>            
                         function disp() {
@@ -94,59 +94,59 @@
                         }
                     });
                     }
-                    </script><br><br>
-                    <div id="info" class="display-hide">
+                    </script>
+                    <div id="info">
                     <div class="row">
                             <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient Name:</b>
+                                <label class="col-xs-2 col-sm-1 col-md-1 control-label" style="color:black;"><b>Name:</b>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-4 col-sm-2 col-md-2">
                                     <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pns" style="border:none;">
                                     </div>
                                 </div>
-                                <div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>DOA:</b>
+                               
+                            
+                            
+                                <label class="col-xs-2 col-sm-1 col-md-1 control-label" style="color:black;"><b>DOA:</b>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-4 col-sm-2 col-md-2">
                                     <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pd" style="border:none;">
                                     </div>
                                 </div>
-                                <div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient Age:</b>
+                              
+                                <label class="col-xs-2 col-sm-1 col-md-1 control-label" style="color:black;"><b>Age:</b>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-4 col-sm-2 col-md-2">
                                     <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pa" style="border:none;">
                                     </div>
                                 </div>
-                                <div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div></div>
-                            <div class="row">
-                            <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient Gender:</b>
+                                
+                            
+                            
+                                <label class="col-xs-2 col-sm-1 col-md-1 control-label" style="color:black;"><b>Gender:</b>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-4 col-sm-2 col-md-2">
                                 <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pg" style="border:none;">
                                 </div>
                                 </div>
-                                <div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div>
+                                
+                            
                         </div></div>
                 </div>
+            </div>
+                        <!-- END VALIDATION STATES-->
+        </div>
+ <div class="content">
+   <div class="portlet light"> 
                 <div class="portlet-body">
+                   
                     <!-- BEGIN FORM-->
-                    
+                   <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-5">
                     <form action="#" class="form-horizontal" id="form">
                         <div class="form-body">
                             <div class="alert alert-danger display-hide" id="fail">
@@ -154,62 +154,51 @@
                             <div class="alert alert-success display-hide" id="suc">
                                 <button class="close" data-close="alert"></button> Information is Updated Successfully! </div>
                             <div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Date</b>
-                                    <span class="required">*</span>
-                                </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-6 col-sm-12 col-md-6">
                                     <div class="input-group">
                                         <span class="input-group-addon">
                                             <i class="fa fa-stethoscope"></i>
                                         </span>
-                                    <input type="date" class="form-control" placeholder="" id="symptoms" required>
+                                    <input type="date" class="form-control" placeholder="Date" id="symptoms" required>
                                     <div class="form-control-focus"> </div>
                                     <span class="help-block">date</span>
                                     </div>
                                 </div>
-                                <div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div>
-                            <div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Time</b>
-                                    <span class="required">*</span>
-                                </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                
+                            
+                            
+                                <div class="col-xs-6 col-sm-12 col-md-6">
                                     <div class="input-group">
                                         <span class="input-group-addon">
                                             <i class="fa fa-ambulance"></i>
                                         </span>
-                                    <input type="time" class="form-control" placeholder="" id="earlier_treat" required>
+                                    <input type="time" class="form-control" placeholder="Time" id="earlier_treat" required>
                                     <div class="form-control-focus"> </div>
                                     <span class="help-block">time</span>    
                                     </div>
                                 </div>
-                                <div class="col-xs-8 col-sm-2 col-md-3"></div>
+                                
                             </div>
                             <div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Clinical Notes </b>
-                                    <span class="required">*</span>
-                                </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                
+                                <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="input-group">
                                         <span class="input-group-addon">
                                             <i class="fa fa-medkit"></i>
                                         </span>
-                                    <input type="textarea" class="form-control" placeholder="" id="conc" required>
+                                    <input type="textarea" class="form-control" placeholder="Clinical Notes" id="conc" required>
                                     <div class="form-control-focus"> </div>
                                     <span class="help-block">Findings made</span>    
                                     </div>
                                 </div>
                                 </div>
                              <div class="form-group form-md-line-input">
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" for="form_control_1" style="color:black;"><b>Treatment and diet </b>
-                                    <span class="required">*</span>
-                                </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="input-group">
                                         <span class="input-group-addon">
                                             <i class="fa fa-medkit"></i>
                                         </span>
-                                    <input type="textarea" class="form-control" placeholder="" id="conct" required>
+                                    <input type="textarea" class="form-control" placeholder="Treatment and diet advised" id="conct" required>
                                     <div class="form-control-focus"> </div>
                                     <span class="help-block">Treatment and diet advised</span>    
                                     </div>
@@ -219,15 +208,16 @@
                         </div>
                         <div class="form-actions">
                             <div class="row">
-                                <div class="col-xs-5 col-sm-5 col-md-5"></div>
+                                
                                 <div class="col-xs-1 col-sm-1 col-md-1">
                                     <input type="submit" class="btn btn-warning" onclick="up();" value="Update Info">
                                 </div>
-                                <div class="col-xs-6 col-sm-6 col-md-6"></div>
+                                
                             </div>
                         </div>
                     </form>
-
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-7">
                      <table class="table table-striped table-bordered table-hover table-header-fixed dt-responsive" width="100%" id="sample_3">
                                         <thead>
                                             <tr class="">
@@ -239,11 +229,14 @@
                                         </thead>
                                         <tbody id="sample_4"></tbody>
                                     </table>
+                    </div>                
                     <!-- END FORM-->
                 </div>
             </div>
-            <!-- END VALIDATION STATES-->
-        </div>
+  
+     
+ </div>       
+    </div>
      <script>
         function up(){
             var dt=document.getElementById("symptoms").value;
