@@ -25,7 +25,7 @@
             <div class="portlet light portlet-fit portlet-form ">
                 <div class="portlet-title">
                 <h4 style="text-align:center;"><span class=" font-yellow-lemon sbold">
-				<div style="color:#ffc107">&nbsp; Diagnosis</div></span></h4>
+				<div style="color:#81ecec">&nbsp; Diagnosis</div></span></h4>
                 <div class="form-horizontal">
                <div class="form-group form-md-line-input" >
                                 <label class="col-xs-1 col-sm-1 col-md-1 control-label" style="color:black; font-size: 12px"><b>Patient id:</b>
@@ -70,7 +70,7 @@
 
                         document.getElementById("pa").value=res[1].trim();
                         document.getElementById("pg").value=res[2].trim();
-                        document.getElementById("pd").value=res[3].trim();  
+                        document.getElementById("pd").value=res[3].trim();    
                         document.getElementById("info").classList.remove("display-hide");  
                         }
                     });

@@ -32,7 +32,7 @@
                             <div class="portlet light ">
                                 <div class="portlet-title">
                                     <h2 style="text-align:center;"><span class=" font-yellow-lemon sbold">
-                                    <div style="color:#ffc107">&nbsp; INVENTORY</div></span></h2>
+                                    <div style="color:#81ecec">&nbsp; INVENTORY</div></span></h2>
                                 </div>
                                 
                                 <div class="portlet-body">

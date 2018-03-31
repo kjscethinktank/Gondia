@@ -25,7 +25,7 @@
             <div class="portlet light portlet-form">
                 <div class="portlet-title">
                 <h4 style="text-align:center;"><span class=" font-yellow-lemon sbold">
-                <div style="color:#ffc107">&nbsp; Daily Readings</div></span></h4>
+                <div style="color:#81ecec">&nbsp; Daily Readings</div></span></h4>
                 <div class="form-horizontal">
                 <div class="form-group form-md-line-input" >
                                 <label class="col-xs-1 col-sm-1 col-md-1 control-label" style="color:black; font-size: 12px"><b>Patient id:</b>
@@ -75,6 +75,8 @@
                         document.getElementById("pa").value=res[1].trim();
                         document.getElementById("pg").value=res[2].trim();
                         document.getElementById("pd").value=res[3].trim();
+                        var row="";
+                        $(".rem").remove();    
                         document.getElementById("info").classList.remove("display-hide");     
                         }
                     });
@@ -87,10 +89,10 @@
                         var ret=d.lastIndexOf("next");
                         var ren=d.substring(0,ret);
                         var res=ren.split("next");
-                        var row="";
+                        row="";
                         for(count=0;count<res.length;count++){
                             var respli= res[count].split(",");
-                            row+='<tr><td>' + respli[0] + '</td><td>' + respli[1] +'</td><td>' + respli[2] +'</td><td>' + respli[3] +'</td><td>'+ respli[4] +'</td><td>'+ respli[5] +'</td></tr>';
+                            row+='<tr class="rem"><td>' + respli[0] + '</td><td>' + respli[1] +'</td><td>' + respli[2] +'</td><td>' + respli[3] +'</td><td>'+ respli[4] +'</td><td>'+ respli[5] +'</td></tr>';
 
                         }
                         $(row).appendTo("#sample_3 tbody");

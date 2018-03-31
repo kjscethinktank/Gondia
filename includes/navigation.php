@@ -13,17 +13,17 @@
                             <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
                             <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
                             <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-                            <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                                <li class="nav-item start ">
+                            <ul class="page-sidebar-menu page-sidebar-menu-closed page-header-fixed page-sidebar-menu-hover-submenu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                                <li class="nav-item start">
                                     <a href="Admitpatient.php" class="nav-link nav-toggle">
-                                        <i class="fa fa-cutlery" style="color:#ffc107"></i>
+                                        <i class="fa fa-user" style="color:#0984e3"></i>
                                         <span class="title">Admit Patient</span>
                                         <span class="arrow"></span>
                                     </a>
                                 </li>
-                                 <li class="nav-item  ">
+                                 <li class="nav-item ">
                                     <a  class="nav-link nav-toggle">
-                                        <i class="fa fa-clipboard" style="color:#ffc107"></i>
+                                        <i class="fa fa-clipboard" style="color:#0984e3"></i>
                                         <span class="title">Patients</span>
                                         <span class="arrow"></span>
                                     </a>
@@ -46,12 +46,19 @@
                                                 <span class="title">Daily Readings</span>
                                             </a>
                                         </li>
+                                        <li class="nav-item  ">
+                                            <a href="patient_inventory.php" class="nav-link">
+                                                <i class="fa fa-clipboard"></i>
+                                                <span class="title">Add Inventory</span>
+                                            </a>
+                                        </li>
+
                                     </ul>
                                 </li>
                                
                                 <li class="nav-item  ">
                                     <a href="inventory.php" class="nav-link nav-toggle">
-                                        <i class="fa fa-clipboard" style="color:#ffc107"></i>
+                                        <i class="fa fa-clipboard" style="color:#0984e3"></i>
                                         <span class="title">Inventory</span>
                                         <span class="arrow"></span>
                                     </a>
@@ -59,7 +66,7 @@
                                 </li>
                                 <li class="nav-item  ">
                                     <a href="Billing.php" class="nav-link nav-toggle">
-                                        <i class="fa fa-file" style="color:#ffc107"></i>
+                                        <i class="fa fa-file" style="color:#0984e3"></i>
                                         <span class="title">Bills</span>
                                         <span class="arrow"></span>
                                     </a>
@@ -67,22 +74,14 @@
                                 </li>
                                 <li class="nav-item  ">
                                     <a href="signup.php" class="nav-link nav-toggle">
-                                        <i class="fa fa-exchange" style="color:#ffc107"></i>
+                                        <i class="fa fa-exchange" style="color:#0984e3"></i>
                                         <span class="title">Register</span>
                                         <span class="arrow"></span>
                                     </a>
                                 </li>
                                 <li class="nav-item  ">
-                                    <a href="Changepassword.php" class="nav-link nav-toggle">
-                                        <i class="icon-settings" style="color:#ffc107"></i>
-                                        <span class="title">Change Password</span>
-                                        <span class="arrow"></span>
-                                    </a>
-
-                                </li>
-                                <li class="nav-item  ">
                                     <a href="#" class="nav-link nav-toggle">
-                                        <i class="fa fa-sign-out" style="color:#ffc107"></i>
+                                        <i class="fa fa-sign-out" style="color:#0984e3"></i>
                                         <span class="title">Sign-out</span>
                                         <span class="arrow"></span>
                                     </a>

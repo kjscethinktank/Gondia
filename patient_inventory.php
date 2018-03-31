@@ -28,7 +28,7 @@
             <div class="portlet light portlet-fit portlet-form ">
                 <div class="portlet-title">
                 <h2 style="text-align:center;"><span class=" font-yellow-lemon sbold">
-                <div style="color:#ffc107">&nbsp; Patient Inventory</div></span></h2>
+                <div style="color:#81ecec">&nbsp; Patient Inventory</div></span></h2>
                 <div class="form-horizontal">
                 <div class="form-group form-md-line-input" >
                                 <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient id:</b>

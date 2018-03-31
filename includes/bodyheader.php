@@ -1,4 +1,4 @@
-<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-sidebar-closed page-container-bg-solid">
     <!-- BEGIN HEADER -->
     <div class="page-header navbar navbar-fixed-top">
         <!-- BEGIN HEADER INNER -->
@@ -6,6 +6,7 @@
             <!-- BEGIN LOGO -->
             <div class="page-logo">
                 <a href="index.html">
+                    <img src="../Gondia/assets/layouts/layout4/img/logo-gondia.png" alt="logo" class="logo-default" />
                 </a>
                 <div class="menu-toggler sidebar-toggler" >
                     <span></span>
@@ -25,16 +26,32 @@
             <div class="page-top">
 
                 <!-- BEGIN TOP NAVIGATION MENU -->
+                <div class="nav navbar-brand pull-left">Gondia Hospital&reg;</div>
                 <div class="top-menu">
-                    <div class="nav navbar-nav">
-                        <img src="/fiestabites_admin/dashboard/assets/pages/media/gallery/fiestabites.png" height="60" width="240" alt="logo" class="logo-default">   
+                    <div class="nav navbar-nav pull-right">
+                        <li class="dropdown dropdown-user dropdown-dark">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <span class="username username-hide-on-mobile"> Nick </span>
+                                    <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
+                            <img alt="" class="img-circle" src="../Gondia/assets/layouts/layout4/img/avatar9.jpg" /> </a>
+                        <ul class="dropdown-menu dropdown-menu-default animated bounceInDown">
+                                    <li>
+                                        <a href="../ChangePassword.php">
+                                            <i class="icon-user"></i> Change Password </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-power-off"></i> Logout </a>
+                                    </li>
+                                </ul>
+                        </li>
                     </div>
-                    <ul class="nav navbar-nav pull-right">
+                    <ul class="nav navbar-nav navbar-right pull-right">
                         <!-- BEGIN NOTIFICATION DROPDOWN -->
                         <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                        <li class="dropdown dropdown-extended dropdown-dark dropdown-notification" id="header_notification_bar">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                <i class="icon-bell" style="color: black;"></i>
+                        <li class="dropdown dropdown-dark dropdown-extended dropdown-notification" id="header_notification_bar">
+                            <a href="javascript:;" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="fa fa-bell" style="color: black;"></i>
                                 <?php 
                                 if($rowcount!=0){
                                 echo '<span class="badge badge-primary">'.$rowcount.' </span>';
@@ -42,7 +59,7 @@
                                 else{}
                                 ?>
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu dropdown-menu-default animated bounceInDown">
                                 <li class="external">
                                     <h3><span class="bold"><?php echo $rowcount; ?> pending</span> notifications</h3>
                                 </li>

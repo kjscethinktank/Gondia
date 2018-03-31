@@ -28,7 +28,7 @@
         <div class="portlet light portlet-fit portlet-form ">
             <div class="portlet-title">
             <h2 style="text-align:center;"><span class="caption-subject font-yellow-lemon sbold">
-            <div style="color:#ffc107">&nbsp; SIGN UP</div></span></h2>
+            <div style="color:#81ecec">&nbsp; SIGN UP</div></span></h2>
             
             </div>
             <div class="portlet-body">

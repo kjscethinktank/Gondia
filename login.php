@@ -21,7 +21,8 @@
         <div class="col-md-6 offset-md-3">
             <div class="card login">
                 <div class="card-body">
-                    <h4 class="card-title text-center heading">Gondia Care Hospital</h4>
+                    <h4 class="card-title text-center heading"><span class=" font-yellow-lemon sbold">
+                <div style="color:#81ecec">&nbsp;Gondia Care Hospital</div></span></h4>
                     <form>
                         <div class="form-group">
                             <!--<label for="email">Email</label>-->

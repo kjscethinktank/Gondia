@@ -31,7 +31,7 @@
                             <div class="portlet light ">
                                 <div class="portlet-title">
                                     <h2 style="text-align:center;"><span class=" font-yellow-lemon sbold">
-                                    <div style="color:#ffc107">&nbsp; INVENTORY</div></span></h2>
+                                    <div style="color:#81ecec">&nbsp; INVENTORY</div></span></h2>
                                 </div>
                                 
                                 <div class="portlet-body">
@@ -124,15 +124,7 @@
                                     <space>
                                     </space>
 
-
-
-
-
-
-                                    
-                                    <!--div class="form-group pull-right">
-                                    <input type="text" class="searche form-control" onkeyup="sinven()" placeholder="Search ..." id="myInput">
-                                    </div-->    
+    
                                     <table class="table table-striped table-bordered table-hover table-header-fixed dt-responsive resultss" width="100%" id="sample_3">
                                         <thead>
                                            <h4 style="text-align:center;"><span class=" font-yellow-lemon sbold">
@@ -149,7 +141,6 @@
                                             </tr-->
                                         </thead>
                                         <tbody id="inventorybody">
-                                            <tr><td>k</td><td>j</td><td>kk</td><td>n</td><td>v</td></tr>
                                             <?php
                                                 if($result){
                                                     while($row=mysqli_fetch_assoc($result))
@@ -163,56 +154,6 @@
                                     </table>
                                 </div>
                             </div>
-                            <!--script>
-function sinven() {
-  // Declare variables 
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("sample_3");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
-                            /*function sinven(){
-              $(".searche").keyup(function () {
-                var searchTerm = $(".searche").val();
-                var listItem = $('.resultss tbody').children('tr');
-                var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
-                $.extend($.expr[':'], {'containsi': function(elem, i, match, array){
-                    return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
-                }
-              });
-                  alert(searchSplit);
-              $(".resultss tbody tr").not(":containsi('" + searchSplit + "')").each(function(e){
-                $(this).attr('visible','false');
-              });
-              $(".resultss tbody tr:containsi('" + searchSplit + "')").each(function(e){
-                $(this).attr('visible','true');
-              });
-              var jobCount = $('.resultss tbody tr[visible="true"]').length;
-                $('.counter').text(jobCount + ' item');
-                  alert(jobCount);
-              if(jobCount == '0') {$('.no-result').show();}
-                else {$('.no-result').hide();}
-                      });
-          }
-          
-          
-          function deleteRow(btn) {
-          var row1 = btn.parentNode.parentNode;
-          row1.parentNode.removeChild(row1);
-        }*/</script-->
                             <!-- Hidden field for initializing tables with diffreent IDs -->
                             <input type="hidden" name="no_of_inventory_items" class="par" value=0>
                             <!-- END EXAMPLE TABLE PORTLET-->

@@ -1,15 +1,15 @@
 
 .page-header.navbar .page-top{
 
-	background: #ffc107;
+	background: #74b9ff;
 }
 .page-header.navbar .page-logo {
-    background: #ffc107;
+    background: #74b9ff;
 }
 
 @media (max-width: 767px){
 	.page-header.navbar {
-    		background:  #ffc107;
+    		background:  #74b9ff;
 	}
 }
 
