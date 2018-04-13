@@ -1,7 +1,7 @@
 
 <?php
 
-include('config.php');
+require_once('config.php');
 
 if(isset($_POST['submit'])) {
 
@@ -19,13 +19,13 @@ if(isset($_POST['submit'])) {
     $formPass = $_POST['password'];
 
 
-    $query = "select * from users where name='$formUser'";
+    $query = "select * from users where user_name='$formUser'";
     echo $query;
     $result = mysqli_query($db, $query);
 
 
 
-    if (mysqli_num_rows(mysqli_query($db,$query)) > 0) {
+    if (mysqli_num_rows($result) > 0) {
 
         if ($row = mysqli_fetch_assoc($result)) ;
         {
