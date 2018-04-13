@@ -11,7 +11,7 @@
     <?php include("includes/bodyheader.php"); ?>
 
     <?php include("includes/navigation.php"); ?>
-    <?php include("config.php");?>
+    
     <?php $query= "SELECT * from inventory";
     $result = mysqli_query ($db,$query); 
     $query= "SELECT * from inventory_updatelog";

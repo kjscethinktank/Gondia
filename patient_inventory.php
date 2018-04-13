@@ -11,7 +11,7 @@
     <?php include("includes/bodyheader.php"); ?>
 
     <?php include("includes/navigation.php"); ?>
-    <?php include("config.php");?>
+    
     <?php $query= "SELECT P_id from patient";
     $result = mysqli_query ($db,$query);
     $queryy= "SELECT inven_name from inventory";
@@ -31,10 +31,10 @@
                 <div style="color:#81ecec">&nbsp; Patient Inventory</div></span></h2>
                 <div class="form-horizontal">
                 <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient id:</b>
+                                <label class="col-xs-2 col-sm-2 col-md-1 control-label" style="color:black;"><b>Patient id:</b>
                                     <span class="required"></span>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-12 col-sm-6 col-md-2">
                                     <div class="input-group">
                                         <span class="input-group-addon">
                                             <i class="fa fa-user"></i>
@@ -53,7 +53,6 @@
                                         </datalist>
                                     </div>
                                 </div>
-                                <div class="col-xs-8 col-sm-2 col-md-3"></div>
                             </div>
                             <script>            
                         function disp() {    
@@ -68,6 +67,9 @@
                         var res=d.split(",");
                         var p1=document.getElementById("pns");
                         p1.value=res[0];
+                        $(".rem").remove();
+                        document.getElementById("qaun").value="";
+                        document.getElementById("invent").value="";    
                         document.getElementById("pa").value=res[1].trim();
                         document.getElementById("pg").value=res[2].trim();
                         document.getElementById("pd").value=res[3].trim();
@@ -95,59 +97,53 @@
                     });
                     }
                     </script><br><br>
-                    <div class="display-hide" id="info">
-                    <div class="row">
+                    <div id="info">
+                    <div class="row" style="padding-left: 10px">
                             <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient Name:</b>
+                                <label class="col-xs-4 col-sm-4 col-md-1 control-label" style="color:black;"><b>Name:</b>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-8 col-sm-4 col-md-2">
                                     <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pns" style="border:none;">
                                     </div>
                                 </div>
-                                <div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>DOA:</b>
+                               
+                            
+                            
+                                <label class="col-xs-4 col-sm-2 col-md-1 control-label" style="color:black;"><b>DOA:</b>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-8 col-sm-4 col-md-2">
                                     <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pd" style="border:none;">
                                     </div>
                                 </div>
-                                <div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient Age:</b>
+                              
+                                <label class="col-xs-4 col-sm-4 col-md-1 control-label" style="color:black;"><b>Age:</b>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-8 col-sm-4 col-md-2">
                                     <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pa" style="border:none;">
                                     </div>
                                 </div>
-                                <div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div></div>
-                            <div class="row">
-                            <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-4 control-label" style="color:black;"><b>Patient Gender:</b>
+                                
+                            
+                            
+                                <label class="col-xs-4 col-sm-2 col-md-1 control-label" style="color:black;"><b>Gender:</b>
                                 </label>
-                                <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="col-xs-8 col-sm-4 col-md-2">
                                 <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pg" style="border:none;">
                                 </div>
                                 </div>
-                                <div class="col-xs-8 col-sm-2 col-md-3"></div>
-                            </div>
-                        </div>
-                    </div>
+                                
+                            
+                        </div></div>
+                </div>
                 </div>
                 <div class="portlet-body">
                     <!-- BEGIN FORM-->
-                    
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
                     <form action="#" class="form-horizontal" id="form">
                         <div class="form-body">
                             <div class="alert alert-danger display-hide" id="fail">
@@ -207,7 +203,8 @@
                             </div>
                         </div>
                     </form>
-
+                </div>
+                <div class="col-sm-6 col-md-6 col-xs-6 table-responsive" >
                      <table class="table table-striped table-bordered table-hover table-header-fixed dt-responsive" width="100%" id="sample_3">
                                         <thead>
                                             <tr class="">
@@ -218,6 +215,8 @@
                                         </thead>
                                         <tbody id="sample_4"></tbody>
                                     </table>
+                                </div>
+                            </div>
                     <!-- END FORM-->
                 </div>
             </div>
@@ -239,6 +238,7 @@
                         success: function(d){ 
                             var suc=document.getElementById("suc");
                             suc.classList.remove("display-hide");
+                            disp();
                         }
                   })
                 }

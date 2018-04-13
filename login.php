@@ -1,3 +1,82 @@
+
+<?php
+
+include('config.php');
+
+if(isset($_POST['submit'])) {
+
+    $loginError = "";
+
+
+
+
+
+
+//Create varibales to store data
+//Wrap data with validating functions
+
+    $formUser = $_POST['username'];
+    $formPass = $_POST['password'];
+
+
+    $query = "select * from users where name='$formUser'";
+    echo $query;
+    $result = mysqli_query($db, $query);
+
+
+
+    if (mysqli_num_rows(mysqli_query($db,$query)) > 0) {
+
+        if ($row = mysqli_fetch_assoc($result)) ;
+        {
+
+
+            $user = $row['user_name'];
+            /* $email = $row['email'];*/
+            $hashedpass = $row['user_password'];
+            $type = $row['user_type'];
+            //print_r($row);
+
+
+        }
+
+        if (!strcmp($formPass, $hashedpass)) {
+            print_r($row);
+            session_start();
+
+            $_SESSION['loggedInUser'] = $user;
+            $_SESSION['loggedInType'] = $type;
+
+
+            header('Location:homepage.php');
+
+
+        }
+
+
+
+
+
+        }
+        else
+        {
+              $loginError="<div class='alert alert-danger'>Wrong Username and Password Combo <a class='close' data-dismiss='alert'>&times;</a> </div>";
+        }
+    }
+    else
+
+        $loginError = "<div class='alert alert-danger'>No Such USer Found <a class='close' data-dismiss='alert'>&times;</a> </div>"
+       // echo $loginError;
+        //login erro
+        //mysqli_close($db);
+
+
+
+
+
+
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,16 +100,15 @@
         <div class="col-md-6 offset-md-3">
             <div class="card login">
                 <div class="card-body">
-                    <h4 class="card-title text-center heading"><span class=" font-yellow-lemon sbold">
-                <div style="color:#81ecec">&nbsp;Gondia Care Hospital</div></span></h4>
-                    <form>
+                    <h4 class="card-title text-center heading">Gondia Care Hospital</h4>
+                    <form action="login.php" method="POST">
                         <div class="form-group">
                             <!--<label for="email">Email</label>-->
                             <label class="sr-only" for="inlineFormInputGroup">Email</label>
                             <div class="input-group mb-2 mb-sm-0">
                                 <div class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
                                 </div>
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Email">
+                                <input type="text" name="username" class="form-control" id="inlineFormInputGroup" placeholder="Username">
                             </div>
                         </div>
                         <div class="form-group">
@@ -39,7 +117,9 @@
                             <div class="input-group mb-2 mb-sm-0">
                                 <div class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i>
                                 </div>
-                                <input type="password" class="form-control" id="password" placeholder="Password"></div>
+                                <input type="password" name="password" class="form-control" id="password" placeholder="Password"></div>
+                               
+
                         </div>
                         <div class="form-check">
                             <label class="custom-control custom-checkbox">
@@ -49,7 +129,7 @@
                             </label>
 
                         </div>
-                        <button type="button" class="btn btn-warning btn-lg btn-block text-white" onclick="window.location.href='/Addpatient.php">Login</button>
+                        <button type="submit" name="submit" class="btn btn-warning btn-lg btn-block text-white" >Login</button>
                         <br>
                         <div class="text-center">
                             <a href="Changepassword.php">Forgot password?</a>
@@ -70,3 +150,6 @@
 
 </body>
 </html>
+
+
+

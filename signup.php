@@ -41,7 +41,7 @@
                     <div class="input-group mb-2 mb-sm-0">
                         <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup"
+                        <input type="text" class="form-control" id="user"
                                placeholder="Username">
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     <div class="input-group mb-2 mb-sm-0">
                         <div class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Email">
+                        <input type="text" class="form-control" id="email" placeholder="Email">
                     </div>
                 </div>
                 <div class="col-md-2"></div>
@@ -66,7 +66,7 @@
                     <div class="form-group col-md-4">
                         <div class="form-group">
                             <!--<label for="password">Password</label>-->
-                            <label class="sr-only" for="inlineFormInputGroup">Password</label>
+                            <label class="sr-only" for="passwd">Password</label>
                             <div class="input-group mb-2 mb-sm-0">
                                 <div class="input-group-addon"><i class="fa fa-unlock-alt"
                                                                   aria-hidden="true"></i>
@@ -83,7 +83,7 @@
                                 <div class="input-group-addon"><i class="fa fa-unlock-alt"
                                                                   aria-hidden="true"></i>
                                 </div>
-                                <input type="password" class="form-control" id="password"
+                                <input type="password" class="form-control" id="cpassword"
                                        placeholder="Confirm Password"></div>
                         </div>
                     </div>
@@ -98,31 +98,21 @@
                     <div class="input-group mb-2 mb-sm-0">
                         <div class="input-group-addon"><i class="fa fa-mobile" aria-hidden="true"></i>
                         </div>
-                        <input type="text" class="form-control" id="inputCity" placeholder="Contact Number">
+                        <input type="text" class="form-control" id="con" placeholder="Contact Number">
                     </div>
                 </div>
-                <div class="col-md-2"></div>
                 </div>
+                
                 <div class="row">
                 <div class="col-md-2"></div>
                 <div class="form-group col-md-8">
-                    <select class="form-control">
+                    <select class="form-control" id="type">
                         <option selected>Select User type</option>
-                        <option>BROTHER</option>
-                        <option>BROTHER GNM</option>
-                        <option>SISTER</option>
-                        <option>SISTER GNM</option>
-                        <option>LAB TECH</option>
-                        <option>ACCOUNTANT</option>
-                        <option>BILLING DEPT</option>
-                        <option>X-RAY TECH</option>
-                        <option>HOUSE KEEPING</option>
-                        <option>SUPERVISOR</option>
-                        <option>PRO</option>
-                        <option>GUARD</option>
-                        <option>ADMIN</option>
-                        <option>RMO</option>
-                        <option>INSURANCE CORDINATOR</option>
+                        <option>Accountant</option>
+                        <option>Admin</option>
+                        <option>Receptionist</option>
+                        <option>Doctor/nurse</option>
+                 
                     </select>
                 </div>
                 <div class="col-md-2"></div>
@@ -130,7 +120,7 @@
                 <div class="row">
                 <div class="col-md-8"></div>
                 <div class="col-md-2">
-                    <button type="submit" class="btn pull-right" style="background-color:#ffc107; color:white;"> Register </button>
+                    <button type="submit" class="btn pull-right" style="background-color:#ffc107; color:white;" onclick="add()"> Register </button>
                 </div>
                 </div>
                 <div class="col-md-2"></div>

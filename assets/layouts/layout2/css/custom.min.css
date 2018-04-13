@@ -16,3 +16,56 @@
 .page-header.navbar .menu-toggler {
 	background-image: url(../img/sidebar_toggler_icon_darkblue.png);
 }
+
+ .page-content-homepage-wrapper {
+       
+      width: 100%; }
+      .page-content-homepage-wrapper .page-content {
+        margin-left: 195px;
+        margin-top: 0px;
+        min-height: 600px;
+        padding: 25px 20px 10px 20px; }
+        .page-content-homepage-wrapper .page-content.no-min-height {
+          min-height: auto; }
+        .page-sidebar-fixed.page-sidebar-hover-on .page-content-homepage-wrapper .page-content {
+          margin-left: 54px; }
+        .page-sidebar-reversed .page-content-homepage-wrapper .page-content {
+          margin-left: 0 !important;
+          margin-right: 195px !important; }
+        .page-sidebar-reversed.page-sidebar-fixed.page-sidebar-hover-on .page-content-homepage-wrapper .page-content {
+          margin-left: 0;
+          margin-right: 54px; }
+        .page-sidebar-reversed.page-sidebar-closed .page-content-homepage-wrapper .page-content {
+          margin-left: 0 !important;
+          margin-right: 54px !important; }
+        .page-sidebar-closed .page-content-homepage-wrapper .page-content {
+           }
+        .page-sidebar-closed.page-sidebar-hide .page-content-homepage-wrapper .page-content {
+          margin-left: 0 !important; }
+        .page-sidebar-closed.page-sidebar-reversed.page-sidebar-hide .page-content-homepage-wrapper .page-content {
+          margin-right: 0 !important; }
+        .page-full-width .page-content-homepage-wrapper .page-content {
+          margin-left: 0px !important; } }
+  
+       padding: 0 !important; }
+    /* Page content */
+    .page-content-homepage-wrapper .page-content {
+      margin: 0px !important;
+      padding: 20px !important;
+     /* 767px */
+    /* Page content */
+    .page-content-homepage-wrapper .page-content {
+      padding: 20px 10px 10px 10px !important;
+      overflow: hidden;
+      /* Page title */ }
+      .page-content-homepage-wrapper .page-content .page-title {
+        margin-bottom: 15px;
+        font-size: 20px; }
+        .page-content-homepage-wrapper .page-content .page-title small {
+          font-size: 13px;
+          padding-top: 3px; } }
+     /* 480px */
+    /* Dashboard date range panel */
+    .page-content-homepage-wrapper .page-content .page-title small {
+      display: block;
+      clear: both; } }

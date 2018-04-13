@@ -13,7 +13,7 @@
                 </div>
             </div>
             <?php
-                include('config.php');
+                include_once('includes/config.php');
                 $query= "SELECT inven_name,inven_id from inventory where available<=5";
                 $result = mysqli_query ($db,$query);
                 $rowcount=mysqli_num_rows($result);

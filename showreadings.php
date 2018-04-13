@@ -9,7 +9,7 @@ if($result)
 	
     while($row=mysqli_fetch_assoc($result))
          {
-         	$final= $final.$row['date-time'].",".$row['pusle'].",".$row['bp'].",".$row['temp'].",".$row['respi'].",".$row['ivfluids']."next";
+         	$final= $final.$row['date _time'].",".$row['pusle'].",".$row['bp'].",".$row['temp'].",".$row['respi'].",".$row['ivfluids']."next";
          	
          }
      echo $final;    
