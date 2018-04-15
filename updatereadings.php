@@ -9,10 +9,14 @@ $b=$_POST['bp'];
 $r=$_POST['resp'];
 $iv=$_POST['ivf'];
 $combi = date('Y-m-d H:i:s', strtotime("$da $ti"));
-$query="insert into daily_reading (daily_readid, p_id, pusle, bp, temp, respi, ivfluids, date _time) values('','$id','$p','$b','$t','$r','$iv','$combi')";
+$query="insert into daily_reading values('','$id','$p','$b','$t','$r','$iv','$combi','','1')";
 $result=mysqli_query($db,$query);
 if($result)
 {
-    echo "S";
+    echo "ok";
+}
+else
+{
+	echo "error";
 }
 ?>

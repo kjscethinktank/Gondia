@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 
-
 <html lang="en">
 <?php $page_title = "Daily Readings"; ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -63,7 +62,7 @@
     <?php $query= "SELECT P_id from patient";
     $result = mysqli_query ($db,$query);  ?>
 
-
+<body>
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
                     
@@ -76,16 +75,17 @@
                 <h4 style="text-align:center;"><span class=" font-yellow-lemon sbold">
                 <div style="color:#81ecec">&nbsp; Daily Readings</div></span></h4>
                 <div class="form-horizontal">
-                    <div class="form-group form-md-line-input" >
-                                <label class="col-xs-2 col-sm-1 col-md-1 control-label" style="color:black; font-size: 12px"><b>Patient id:</b>
+                <div class="form-group form-md-line-input" >
+                    <form id="img_form" method="post" enctype="multipart/form-data">
+                                <label class="col-xs-1 col-sm-1 col-md-1 control-label" style="color:black; font-size: 12px"><b>Patient id:</b>
                                     <span class="required"></span>
                                 </label>
-                                <div class="col-xs-6 col-sm-6 col-md-2">
+                                <div class="col-xs-4 col-sm-4 col-md-2">
                                     <div class="input-group">
                                         <span class="input-group-addon">
                                             <i class="fa fa-user"></i>
                                         </span>
-                                        <input list="p_id" id="pid" class="form-control" onchange="disp();" placeholder="Enter ID">
+                                        <input list="p_id" id="pid" class="form-control" name="pid" onchange="disp();" placeholder="Enter ID">
                                         <div class="form-control-focus"> </div>
                                         <datalist id="p_id">
                                         <?php
@@ -99,7 +99,7 @@
                                         </datalist>
                                     </div>
                                 </div>
-                                 <div class="col-xs-8 col-sm-8 col-md-8">
+                              <div class="col-xs-8 col-sm-8 col-md-8">
                                 <input type="file" name="file" id="file" hidden="hidden" class="inputfile"/>
                                 <label for="realFile">
                                 <figure id="customBtn">
@@ -114,11 +114,9 @@
                               </form>
 
                               </div>
-                            
-
-                                
                             </div>
-                                      <script>            
+
+                            <script>            
                         function disp() {
                         var select = document.getElementById("pid");
                         var opt = select.value;
@@ -166,13 +164,16 @@
                         }
                     });
                     }
-                    </script><br><br>
+                    </script>
+
+                    <br><br>
+
                     <div id="info">
-                    <div class="row" style="padding-left: 10px">
+                    <div class="row">
                             <div class="form-group form-md-line-input" >
-                                <label class="col-xs-4 col-sm-4 col-md-1 control-label" style="color:black;"><b>Name:</b>
+                                <label class="col-xs-2 col-sm-2 col-md-1 control-label" style="color:black;"><b>Name:</b>
                                 </label>
-                                <div class="col-xs-8 col-sm-4 col-md-2">
+                                <div class="col-xs-4 col-sm-4 col-md-2">
                                     <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pns" style="border:none;">
                                     </div>
@@ -180,17 +181,17 @@
                                
                             
                             
-                                <label class="col-xs-4 col-sm-2 col-md-1 control-label" style="color:black;"><b>DOA:</b>
+                                <label class="col-xs-2 col-sm-2 col-md-1 control-label" style="color:black;"><b>DOA:</b>
                                 </label>
-                                <div class="col-xs-8 col-sm-4 col-md-2">
+                                <div class="col-xs-4 col-sm-4 col-md-2">
                                     <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pd" style="border:none;">
                                     </div>
                                 </div>
                               
-                                <label class="col-xs-4 col-sm-4 col-md-1 control-label" style="color:black;"><b>Age:</b>
+                                <label class="col-xs-2 col-sm-2 col-md-1 control-label" style="color:black;"><b>Age:</b>
                                 </label>
-                                <div class="col-xs-8 col-sm-4 col-md-2">
+                                <div class="col-xs-4 col-sm-4 col-md-2">
                                     <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pa" style="border:none;">
                                     </div>
@@ -198,31 +199,34 @@
                                 
                             
                             
-                                <label class="col-xs-4 col-sm-2 col-md-1 control-label" style="color:black;"><b>Gender:</b>
+                                <label class="col-xs-2 col-sm-2 col-md-1 control-label" style="color:black;"><b>Gender:</b>
                                 </label>
-                                <div class="col-xs-8 col-sm-4 col-md-2">
+                                <div class="col-xs-4 col-sm-4 col-md-2">
                                 <div class="input-group">
                                     <input type="text" class="form-control" readonly id="pg" style="border:none;">
                                 </div>
                                 </div>
                                 
                             
-                        </div></div>
+                        </div>
+                    </div>
                 </div>
-                </div>
+
+            </div>
+
                 <div class="portlet-body">
                     <!-- BEGIN FORM-->
                     <div class="row">
-                     
                      <div class="col-xs-12 col-sm-12 col-md-5">
                          <form action="#" class="form-horizontal" id="form">
                         <div class="form-body">
                             <div class="alert alert-danger display-hide" id="fail">
-                                <button class="close" data-close="alert"></button> Your form has some errors. Please check below. </div>
-                            <div class="alert alert-success display-hide" id="suc">
-                                <button class="close" data-close="alert"></button> Information is Updated Successfully! </div>
-                            <div class="alert alert-danger display-hide" id="err">
-                                <button class="close" data-close="alert"></button>Some error occured while uploading !</div>       <div class="form-group form-md-line-input">
+                            <button class="close" onclick="msgClose();" data-close="alert"></button> Your form has some errors. Please check below. </div>
+                        <div class="alert alert-success display-hide" id="suc">
+                            <button class="close" onclick="msgClose();" data-close="alert"></button> Information is Updated Successfully! </div>
+                        <div class="alert alert-danger display-hide" id="err">
+                            <button class="close" onclick="msgClose();" data-close="alert"></button>Some error occured while uploading !</div>  
+                            <div class="form-group form-md-line-input">
                                <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="input-group">
                                         <span class="input-group-addon">
@@ -319,7 +323,7 @@
                     </form>
 
                      </div>   
-                     <div class="col-xs-12 col-sm-12 col-md-7 table-responsive">
+                     <div class="col-xs-12 col-sm-12 col-md-7">
                          <table class="table table-striped table-bordered table-hover table-header-fixed dt-responsive" width="100%" id="sample_3">
                                         <thead>
                                             <tr class="">
@@ -343,7 +347,9 @@
             </div>
             <!-- END VALIDATION STATES-->
         </div>
-     <script>function up(){
+
+     <script>
+        function up(){
             var pi=document.getElementById("pid").value;
             var dt=document.getElementById("dat").value;
             var ti=document.getElementById("time").value;
@@ -362,26 +368,42 @@
                         success: function(d){ 
                            if(d=="ok")
                            {
-                             
                               var suc=document.getElementById("suc");
-                              suc.classList.remove("display-hide");
+                              suc.style.display="block";
                               disp();
                            }
                            else
                            {
                                 var err=document.getElementById("err");
-                                err.classList.remove("display-hide");
+                                err.style.display="block";
                            }
                         }
                   })
                 }
-        
             else{
                 var f=document.getElementById("fail");
-                f.classList.remove("display-hide");
+                f.style.display="block";
             }
+            document.getElementById("dat").disabled=true;
+            document.getElementById("time").disabled=true;
+            document.getElementById("pul").disabled=true;
+            document.getElementById("bp").disabled=true;
+            document.getElementById("temp").disabled=true;
+            document.getElementById("respi").disabled=true;
+            document.getElementById("iv").disabled=true;
+        }
+        function msgClose()
+        {
+            document.getElementById("dat").disabled=false;
+            document.getElementById("time").disabled=false;
+            document.getElementById("pul").disabled=false;
+            document.getElementById("bp").disabled=false;
+            document.getElementById("temp").disabled=false;
+            document.getElementById("respi").disabled=false;
+            document.getElementById("iv").disabled=false;        
         }
 
+</script>
 
 <!-- upload image -->
     
@@ -460,10 +482,20 @@ realFileBtn.addEventListener("change",function(){
 </script>
 <!-- image upload -->
 
-    </script>
 </div>
 
-</div>    
+</div> 
+
+<!-- </label>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> -->
 
 <?php include("includes/footer.php"); ?>
 
